@@ -13,22 +13,25 @@ var me={
 		name:"Kathmandu Engineering College",
 		date: 2016,
 	}
-	]
+	],
+	hobbies:['drums','travel','football','coding']
 }
 console.log(me.education);
 setTimeout(funct,1000);
 function funct(){
 	var x = me.education;
+	var y = me.hobbies;
 	document.getElementById("name").textContent= me.name;
 	document.getElementById('DOB').textContent=me.DateofBirth;
 	console.log(x);
 	x.forEach(myFunction);
 	starcreator();
 	pyramidcreator();
+	me.hobbies.forEach(hobbiesgetter);
 }
 function myFunction(item){
 	console.log(item.name);
-	document.getElementById("Education").textContent += item.name +" "+ "untill" +" " + item.date + "\n";
+	document.getElementById("Education").textContent += item.name +" "+ "untill" +" " + item.date + ", ";
 
 }
 
@@ -40,6 +43,9 @@ function starcreator(){
 	}
 	document.getElementById("pyramid").innerText +="\n";
 	}
+}
+function hobbiesgetter(item){
+	document.getElementById('hobbies').innerText +=item + ", ";
 }
 function pyramidcreator(){
 	for (var i=5;i>0;i--){
